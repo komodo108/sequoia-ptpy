@@ -413,6 +413,7 @@ class Nikon(object):
             MfDriveStepEnd=0xA00C,
             MfDriveStepInsufficiency=0xA00E,
             AdvancedTransferCancel=0xA022,
+            BulbReleaseBusy=0xA200,
             **product_responses
         )
 
