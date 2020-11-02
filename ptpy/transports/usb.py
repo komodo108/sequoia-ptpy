@@ -424,15 +424,15 @@ class USBTransport(object):
         '''Send PTP request without checking answer.'''
         # Don't modify original container to keep abstraction barrier.
         ptp = Container(**ptp_container)
-        # Don't send unused parameters
-        try:
-            while not ptp.Parameter[-1]:
-                ptp.Parameter.pop()
-                if len(ptp.Parameter) == 0:
-                    break
-        except IndexError:
-            # The Parameter list is already empty.
-            pass
+        # Send all parameters
+        #try:
+        #    while not ptp.Parameter[-1]:
+        #        ptp.Parameter.pop()
+        #        if len(ptp.Parameter) == 0:
+        #            break
+        #except IndexError:
+        #    # The Parameter list is already empty.
+        #    pass
 
         # Send request
         ptp['Type'] = 'Command'
