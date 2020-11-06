@@ -824,6 +824,14 @@ class PTP(object):
             logger.error(e)
             raise e
 
+    def shutdown(self):
+        """ Shutdown the transport """
+        try:
+            return super(PTP, self).__shutdown()
+        except Exception as e:
+            logger.error(e)
+            raise e
+
     # Operation-specific methods and helpers
     # --------------------------------------
     def _parse_if_data(self, response, constructor):
